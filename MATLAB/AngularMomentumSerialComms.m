@@ -5,7 +5,7 @@ clear;
 close all;
 
 %% Parameters
-SIMULATION_MODE = true;
+SIMULATION_MODE = false;
 PRINT_PERIOD = 200; %ms
 numSec = 90;
 
@@ -18,7 +18,7 @@ open(dataVideo);
 
 if ~SIMULATION_MODE
     fclose(instrfind());
-    s1 = serial('COM5'); % Serial port
+    s1 = serial('COM8'); % Serial port
     s1.BaudRate=115200;               % define baud rate
     set(s1, 'terminator', 'LF');    % define the terminator for println
     fopen(s1);
